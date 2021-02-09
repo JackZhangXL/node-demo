@@ -15,9 +15,9 @@ function encode(seq, data) {
 
     // 一般来说，一个rpc调用的数据包会分为定长的包头和不定长的包体两部分
     // 包头的作用就是用来记载包的序号和包的长度，以实现全双工通信
-    const header = Buffer.alloc(6);
+    const header = Buffer.alloc(6)
     header.writeInt16BE(seq)
-    header.writeInt32BE(body.length, 2);
+    header.writeInt32BE(body.length, 2)
 
     return Buffer.concat([header, body])
 }

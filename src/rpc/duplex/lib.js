@@ -13,8 +13,8 @@ function checkComplete(buffer) {
 }
 
 function decode(buffer) {
-    const header = buffer.slice(0, 6);
-    const seq = header.readInt16BE();
+    const header = buffer.slice(0, 6)
+    const seq = header.readInt16BE()
     const body = buffer.slice(6)
 
     return {

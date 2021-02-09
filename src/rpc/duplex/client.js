@@ -6,7 +6,7 @@ const socket = new net.Socket({})
 socket.connect({
     host: '127.0.0.1',
     port: 4000
-});
+})
 
 const categoryIds = [
     "1",
@@ -36,7 +36,7 @@ function encode(data) {
     return buffer
 }
 
-let seq = 0;
+let seq = 0
 let id = Math.floor(Math.random() * categoryIds.length)
 
 let oldBuffer = null
