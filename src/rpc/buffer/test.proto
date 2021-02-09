@@ -1,0 +1,10 @@
+message Shop {
+    required float id = 1;
+    required string name = 2;
+    repeated Deals deals = 3;
+}
+
+message Deals {
+    required float id = 1;
+    required float price = 2;
+}
