@@ -18,14 +18,15 @@
 // })
 
 const koa = require('koa')
+const mount = require('koa-mount')
 const graphqlHTTP = require('koa-graphql')
 const app = new koa
 
 app.use(
     // 给koa-graphql传一个graphql的协议文件，就会自动帮你生成graphql-api
-    graphqlHTTP({
+    mount('/api', graphqlHTTP({
         schema: require('./schema')
-    })
+    }))
 )
 
 app.listen(3000)

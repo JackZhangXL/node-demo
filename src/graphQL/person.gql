@@ -1,8 +1,13 @@
 type Person {
     id: Int
     name: String
+    location: String
 }
 
 type Query {
     person: [Person]
+}
+
+type Mutation {
+    location(id: Int, location: String): String
 }
