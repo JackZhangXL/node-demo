@@ -30,3 +30,10 @@ app.use(
 )
 
 app.listen(3000)
+
+// 查询用get请求的query：http://localhost:3000/api/?query={person{id,name,location}}
+// 结果：{"data":{"person":[{"id":1,"name":"zhangsan","location":"shanghai"},{"id":2,"name":"lisi","location":"beijing"}]}}
+
+// 修改用post请求的body：http://localhost:3000/api/
+// body：mutation {location(id: 2, location: "chengdu")}
+// 结果：{"data": {"location": "chengdu"}}
