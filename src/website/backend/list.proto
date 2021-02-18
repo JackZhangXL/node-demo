@@ -1,0 +1,10 @@
+message List {
+    required string name = 1;
+    required int32 price = 2;
+}
+
+message ListResponse {
+    repeated List list = 1;
+}
+message ListRequest {
+}
