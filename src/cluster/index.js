@@ -46,7 +46,7 @@ if (cluster.isMaster) { // 主进程走分发逻辑
 } else {    // 子进程走http服务逻辑
     process.on('uncaughtException', function (err) {    // 当子进程出现会崩溃的错误
         console.log(err)
-        process.exit(1)
+        process.exit(1) // 最好还是退出进程，不要让服务继续，否则服务会进入诡异不可用的状态
     })
 
     process.on('message', function (msg) {          // 子进程回应心跳信息
